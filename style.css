@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #ffffff;
+}
+
+#highlight {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    width: 50vw;
+    box-shadow: 3px 2px 16px -4px rgba(0, 0, 0, 0.75);
+}
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: saturate(1);
+}
+
+svg {
+    fill: none;
+    stroke: #8a3ab9;
+    stroke-linecap: round;
+    stroke-width: 3;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 315;
+    stroke-dashoffset: 0;
+    cursor: pointer;
+}
+
+img:hover~svg {
+    animation: stroke-draw 4s ease-out infinite alternate-reverse;
+}
+
+p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-box-shadow: 3px 2px 16px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 2px 16px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 2px 16px -4px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes stroke-draw {
+    0% {
+        stroke: #8a3ab9;
+        stroke-dasharray: 315;
+        stroke-dashoffset: -315;
+    }
+    50% {
+        stroke: #cd486b;
+        stroke-dasharray: 315;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke: #8a3ab9;
+        stroke-dasharray: 315;
+        stroke-dashoffset: 315;
+    }
+}
